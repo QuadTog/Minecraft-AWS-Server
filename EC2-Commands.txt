@@ -12,7 +12,7 @@ $ mkdir /minecraft
 //This is purely for organization, it's just creating a file, which keeps things nicely organized
 $ cd /minecraft
 //This command will put you inside your newly created Minecraft directory
-$ aws s3 cp s3://<s3-Bucket-Name-Here>/Server-Files<Version>.zip /minecraft
+$ aws s3 cp s3://minecraft-file-store/ServerFiles-2.44.zip /minecraft
 //This line will import your s3 bucket server file into your ec2 terminal, this line is formatted like this: s3:// (this is the S3 URL to your Server-Files which can be found in your bucket) "/minecraft" is telling the computer to put
 // your files in the /minecraft directory that was created
 $ ls
