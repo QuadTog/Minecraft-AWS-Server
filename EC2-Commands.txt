@@ -35,6 +35,8 @@ $ cd <Server-Files-Folder-Found-In-ls-Command>
 
 $ sudo startserver.sh
 //this line will run the startserver file that should be located inside your Server-Files, while running this it will ask you to install Java, do that, and run it again,
+//if no work, enable in Amazon (https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/generic-linux-install.html)
+
 & ./run.sh
 //This line will actually start your server, and will take a few minutes, once it's done have fun!
 
