@@ -5,6 +5,9 @@ Format:
 - Anything with "$" in front of it is a command to be entered into the Ec2 Linux Terminal.
 
 Commands:
+//NOTE: If perm denied, just $ sudo mkdir /minecraft
+    // If more write perms are needed - $ sudo chmod a+w /minecraft
+    // Use $ ls -ald /minecraft to check perms, should read= "drwxrwxrwx 2 root root *DATE* /minecraft"
 $ mkdir /minecraft
 //This is purely for organization, it's just creating a file, which keeps things nicely organized
 $ cd /minecraft
