@@ -1,5 +1,5 @@
 # Minecraft-AWS-Server
-Commands used to create, and manage my AWS 1.20.1 All The Mods 9 Minecraft Modded Server
+Commands used to create, and manage my AWS 1.21.1 All The Mods 10 Minecraft Modded Server
 
 Important Setup:
 Step 1: Install Modded Minecraft Server Files:
