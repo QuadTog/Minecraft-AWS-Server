@@ -10,19 +10,29 @@ Commands:
     // Use $ ls -ald /minecraft to check perms, should read= "drwxrwxrwx 2 root root *DATE* /minecraft"
 $ mkdir /minecraft
 //This is purely for organization, it's just creating a file, which keeps things nicely organized
+
 $ cd /minecraft
 //This command will put you inside your newly created Minecraft directory
+
 $ aws s3 cp s3://minecraft-file-store/ServerFiles-2.44.zip /minecraft
 //This line will import your s3 bucket server file into your ec2 terminal, this line is formatted like this: s3:// (this is the S3 URL to your Server-Files which can be found in your bucket) "/minecraft" is telling the computer to put
 // your files in the /minecraft directory that was created
+
 $ ls
 // This is a very useful command and will tell you if you've done everything correctly so far, if you see your Server-Files zip when entering this command then everything is going according to plan.
-$ unzip <Server-Files-Name-Here>
+
+$ unzip ServerFiles-2.44.zip
 //This will inflate/unzip your server files
+
 $ls
 //again check your files and you should now see a Server-Files-<version> without the .zip, we want to enter this file.
+
 $ cd <Server-Files-Folder-Found-In-ls-Command>
 //This line will put us inside the Server Files folder
+
+//NOTE: If script doesn't start, try $ chmod u+x startserver.sh
+    //OR, try $ ./startserver.sh
+
 $ sudo startserver.sh
 //this line will run the startserver file that should be located inside your Server-Files, while running this it will ask you to install Java, do that, and run it again,
 & ./run.sh
