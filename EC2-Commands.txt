@@ -42,8 +42,8 @@ $ sudo startserver.sh
 
 
 If you'd like to backup your server run a command like this:
-$ aws s3 cp --recursive /minecraft/<Server-Files-Folder>/world/ s3://<s3 URL to where you'd like to back up your world save to>
+$ aws s3 cp --recursive /minecraft/world/ s3://minecraft-file-store/worlds/
 //This file will recursively put every world file into your desired s3 bucket location, this it's important to keep backups in case of a server crash.
 
 To remove your would files you just need to overwrite the world files inside your Server-Files, the command should look something like this:
-aws s3 sync s3://<s3 url to world backup folder> /minecraft/<server-Files-Version>/world/
+aws s3 sync s3://minecraft-file-store/worlds/ /minecraft/world/
