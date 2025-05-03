@@ -24,26 +24,31 @@ $ ls
 $ unzip ServerFiles-2.44.zip
 //This will inflate/unzip your server files
 
-$ls
-//again check your files and you should now see a Server-Files-<version> without the .zip, we want to enter this file.
+$ sudo rpm --import https://yum.corretto.aws/corretto.key
+$ sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+$ sudo yum install -y java-21-amazon-corretto-devel
+//Install JAVA21 (https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/generic-linux-install.html#rpm-linux-install-instruct)
 
-$ cd <Server-Files-Folder-Found-In-ls-Command>
-//This line will put us inside the Server Files folder
+$ chmod u+x startserver.sh
+//give perms to run script
 
-//NOTE: If script doesn't start, try $ chmod u+x startserver.sh
-    //OR, try $ ./startserver.sh
+$ ./startserver.sh
+//this line will run the startserver file that should be located inside your Server-Files, while running this it will ask you to enable the EULA=TRUE
 
-$ sudo startserver.sh
-//this line will run the startserver file that should be located inside your Server-Files, while running this it will ask you to install Java, do that, and run it again,
-//if no work, enable in Amazon (https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/generic-linux-install.html#rpm-linux-install-instruct)
+$ nano eula.txt
+//Set EULA=TRUE (Ctrl-O to save)
 
-& ./run.sh
+$ ./run.sh
 //This line will actually start your server, and will take a few minutes, once it's done have fun!
+
+// EDIT Minecraft startup JAVA settings 
+// $ nano user_jvm_args.txt
+
 
 
 If you'd like to backup your server run a command like this:
 $ aws s3 cp --recursive /minecraft/world/ s3://minecraft-file-store/worlds/
 //This file will recursively put every world file into your desired s3 bucket location, this it's important to keep backups in case of a server crash.
 
-To remove your would files you just need to overwrite the world files inside your Server-Files, the command should look something like this:
+To remove your world files - overwrite the world files inside your Server-Files, the command should look something like this:
 aws s3 sync s3://minecraft-file-store/worlds/ /minecraft/world/
